@@ -35,6 +35,7 @@ h3 {
 .pattern {
   position: absolute;
   overflow: hidden;
+  z-index: -1;
   background-size: cover;
 }
 
