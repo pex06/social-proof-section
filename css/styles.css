@@ -16,8 +16,6 @@
 }
 
 body {
-  position: relative;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -27,16 +25,31 @@ body {
   text-align: center;
 }
 
+body,
+.card__header {
+  display: flex;
+}
+
+body,
+.card__image,
+.card__div {
+  position: relative;
+}
+
 h2,
 h3 {
   font-size: inherit;
 }
 
 .pattern {
-  position: absolute;
-  overflow: hidden;
   z-index: -1;
+  overflow: hidden;
   background-size: cover;
+}
+
+.pattern,
+.attribution {
+  position: absolute;
 }
 
 .top-pattern {
@@ -73,24 +86,25 @@ h3 {
   margin-bottom: 3.8em;
 }
 
+.star {
+  padding: 0.5em;
+  background-color: var(--light-grayish-magenta);
+}
+
 .star,
 .card {
-  min-width: 300px;
-  max-width: 340px;
   margin: 1em auto 1em auto;
   border-radius: 10px;
 }
 
-.star {
-  padding: 1em 0.5em 0.5em 0.5em;
-  background-color: var(--light-grayish-magenta);
-}
-
 .star__text {
+  margin-left: 1em;
   font-weight: 700;
 }
 
 .card {
+  min-width: 300px;
+  max-width: 340px;
   height: 265px;
   padding: 2em;
   text-align: start;
@@ -98,12 +112,7 @@ h3 {
   background-color: var(--dark-magenta);
 }
 
-.card__header {
-  display: flex;
-}
-
 .card__image {
-  position: relative;
   top: 10px;
   width: 50px;
   height: 50px;
@@ -111,7 +120,6 @@ h3 {
 }
 
 .card__div {
-  position: relative;
   top: 10px;
   left: 20px;
 }
@@ -130,12 +138,12 @@ h3 {
 }
 
 .attribution {
-  position: absolute;
   left: 0;
   right: 0;
   bottom: 2.5em;
   font-size: 11px;
 }
+
 .attribution__link {
   color: hsl(228, 45%, 44%);
 }
@@ -153,6 +161,12 @@ h3 {
     background-image: url(../assets/images/bg-pattern-bottom-desktop.svg);
   }
 
+  .header {
+    top: 3em;
+    left: -21.5em;
+    width: 450px;
+  }
+
   .header,
   .stars,
   .star-2,
@@ -163,10 +177,9 @@ h3 {
     position: relative;
   }
 
-  .header {
-    top: 5em;
-    left: -19.8em;
-    width: 450px;
+  .title {
+    width: 310px;
+    font-size: 2.5rem;
   }
 
   .title,
@@ -174,14 +187,22 @@ h3 {
     text-align: start;
   }
 
-  .title {
-    width: 290px;
-  }
-
   .stars {
     top: -9em;
     left: 42em;
     width: 380px;
+  }
+
+  .star {
+    width: 410px;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+  }
+
+  .star,
+  .cards {
+    display: flex;
   }
 
   .star-2 {
@@ -194,8 +215,7 @@ h3 {
 
   .cards {
     top: -7.5em;
-    display: flex;
-    gap: 1em;
+    gap: 2.5em;
   }
 
   .card-2 {
